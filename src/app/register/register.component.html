@@ -1,0 +1,112 @@
+<!-- <input type="text" placeholder="USERNAME" [(ngModel)]='user.userName'><br/>
+<input type="text" placeholder="PHONENO" [(ngModel)]='user.phoneno'><br/>
+<input type="text" placeholder="PASSWORD" [(ngModel)]='user.password'><br/>
+
+<input type="submit" value="REGISTER" (click)="showDetails()"> -->
+
+<!-- 
+<form #regForm="ngForm" (ngSubmit)="showDetails(regForm.value)" novalidate>
+    Enter UserName      : <input type="text" name="userName"   ngModel #userName=ngModel   required/> <br/>
+    Enter PhoneNo    : <input type="text" name="phoneno" ngModel #phoneno=ngModel required/> <br/>
+    Enter Password     : <input type="text" name="password"  ngModel #password=ngModel  required/> <br/>
+
+    <button [disabled]="!regForm.valid"> Submit </button>
+</form>
+
+<div *ngIf="userName.errors?.required   && userName.touched">   Enter Data in UserName Field </div>
+<div *ngIf="phoneno.errors?.required && phoneno.touched"> Enter Data in PhoneNo Field </div>
+<div *ngIf="password.errors?.required   && password.touched">   Enter Data in Password Field </div>
+
+
+ -->
+
+
+ <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.btn {
+  position: relative;
+  width: 100%;
+  top:100px;
+  left:200px;
+  max-width: 400px;
+}
+
+ .img {
+  width: 1400px;
+  height: 3000px;
+}
+
+.container .btn:hover {
+  background-color: black;
+}
+</style>
+</head>
+<body>
+    <div style="width: 100%;">
+    <div style="float:left; width:50%; margin-top: 0px;">
+        <img src="./assets/Images/R_Image.jpg" style="width: 1536px; height:697px;"><br><br>
+    </div>
+</div>
+<div style="float:right; width:50%;">
+    <div style="font-style: oblique; text-align: center;font-size: 15px;color: white">
+        <br><br><br><br><br><br>
+            <h2 style="font-size: 30px;"><b>GREENGROCERS</b></h2>
+    </div><br><br>        
+            <div align="center" class="container" style="font-style: oblique;">
+                <input type="text" [(ngModel)]='users.userName' placeholder="NAME" class="form-control shadow-sm" style="width: 350px;"><br/>
+                <input type="text" [(ngModel)]='users.phoneno' placeholder="PHONENO" class="form-control shadow-sm" style="width: 350px;"><br/>
+                <input type="text" [(ngModel)]='users.email' placeholder="EMAIL" class="form-control shadow-sm" style="width: 350px;"><br/>
+                <input type="password" [(ngModel)]='users.password' placeholder="PASSWORD" class="form-control col-1 shadow-sm" style="width: 350px;"><br/>  
+                <div class="form-group col-4" style="margin-top: -80px; margin-left: -400px;"> 
+                    <button class="btn btn-success" style="text-align: center;" type="submit" value="REGISTER" (click)="registerEmp()">Register</button>
+                </div> 
+            </div>
+            <!-- <form #registerForm=ngForm (ngSubmit)="registrationSubmit2(registerForm)" novalidate>
+                <input type = "text"     name="name"       placeholder="Name"     ngModel required #name = ngModel/> <br/>
+                <input type = "text"     name="phone"    placeholder="PhoneNo"  ngModel required #phone = ngModel/> <br/>
+                <input type = "email"    name="email"      placeholder="Email"    ngModel required #email = ngModel/> <br/>
+                <input type = "password" name="password"   placeholder="Password" ngModel required #password = ngModel/> <br/>
+                <button [disabled]="!registerForm.valid" (click)="registerEmp()">Submit</button>
+            </form>
+            </div> -->
+
+<!-- <div class="row">
+    <div class="col-6 m-auto">
+        <div class = "card m-auto">
+            <div class = "card-header" align="center" style="font-size: 30px;">
+                <b>GreenGrocer Registration</b>
+            </div>
+            <div class = "card-body">
+                <form #loginForm='ngForm' (ngSubmit)="registrationSubmit2(loginForm.value)">
+                    <div class="form-group col-12">
+                        <label style="font-size: 20px;">Name</label>
+                        <input class = "form-control" required ngModel name="name">
+                    </div><br>
+                    <div class="form-group col-12">
+                        <label style="font-size: 20px;">Phone No</label>
+                        <input type="text" class = "form-control" required ngModel name="phoneno">
+                    </div><br>
+                    <div class="form-group col-12">
+                        <label style="font-size: 20px;">Email</label>
+                        <input type="email" class = "form-control" required ngModel name="email">
+                    </div><br>
+                    <div class="form-group col-12">
+                        <label style="font-size: 20px;">Password</label>
+                        <input type="password" class = "form-control" required ngModel name="password">
+                    </div><br>
+                    <div class="form-group col-12">
+                        <input type="submit" value="REGISTER" (click)="registerEmp()">
+                        <button [disabled]="!loginForm.valid" type="submit" class="btn btn-success"> Register </button>&nbsp;&nbsp;&nbsp; 
+                        <button type="button" class="btn btn-secondary ml-2"> cancel </button> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ -->

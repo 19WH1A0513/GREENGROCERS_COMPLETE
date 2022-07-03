@@ -1,0 +1,68 @@
+<app-header></app-header>
+<ng-container *ngIf="fruits.length !=0">
+    <div class="container">
+        <br><br>
+        <div class="card-table shadow-sm">
+            <div class="cart-product">
+                <table class="table table-bordered table-striped table-hover table-sm table-success table-responsive">
+                    <thead>
+                        <tr>
+                            <th style="font-size: 18px;">Sr.No</th>
+                            <th style="font-size: 18px;">Fruit Name</th>
+                            <th style="font-size: 18px;">Fruit Image</th>
+                            <th style="font-size: 18px;">Action</th>
+                            <th style="font-size: 18px;">Return</th>
+                            <th style="font-size: 18px;">Price</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of fruits; let i = index">
+                            <td style="font-size: 18px;">{{i+1}}</td>
+                            <td style="font-size: 18px;">{{item.fruitName}}</td>
+                            <td><img style="width: 120px;" src="{{item.imagePath}}" alt=""></td>
+                            <td style="font-size: 18px;">
+                                <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                            <td style="font-size: 18px;">
+                                <p class="card-text"> Return within {{item.ret}} hrs</p>
+                            </td>
+                            <td style="width: 12%;font-size: 18px;">Rs.{{item.price}}</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="3"></td>
+                            <td style="font-size: 18px;"><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td>
+                            <td style="font-size: 18px;"><button routerLink="/fruits" class="btn btn-success">Shop More</button></td>
+                            <td style="font-size: 16px;"><strong>Grand Total : Rs.{{grandTotal}}</strong></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div><br>
+    <h1 style="font-size: 20px;color:black;text-align: center;"><b>Please have a look into our user-help-guide before ordering to make your order more productive!!</b></h1>
+    <button class="btn btn-success" routerLink="/userhelp" style="margin-left: 700px;">UserHelp</button>
+    <div class="container" style="margin-left: 1220px;">
+        <button class="btn btn-success" routerLink="/myorders" (click)="emptycart()">Proceed to pay Rs.{{grandTotal}}</button>
+    </div><br><br><br><br>
+    <marquee style="color: darkturquoise;font-size: 30px;"><b>COMBO PACKS ARE AVAILABLE!!</b></marquee>
+</ng-container>
+
+
+<ng-container *ngIf="fruits.length ==0">
+    <div class="container">
+            <h1 style="text-align: center;font-size: 35px;font-weight: bold; margin-top: 130px;margin-left: 60px;">My Cart</h1> <br><br><br> <br><br><br>
+        <div class="center"><br><br> <br><br><br> <br><br><br>
+            <img src="./assets/Images/shopping-cart.png" height="500" width="300">
+            <div style="margin-left: 90px;"> <br>
+                <h3 style="font-size: 25px;"><strong> Your cart is empty!!</strong></h3>
+                <h6 style="font-size: 20px;"><b>Hurry Up,Shop now!!!</b></h6>
+                <button routerLink="/fruits" class="btn btn-success" style="font-size: 50px;">Shop Now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
+    </div>
+</ng-container>
+

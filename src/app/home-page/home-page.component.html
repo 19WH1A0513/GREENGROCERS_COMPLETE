@@ -1,0 +1,78 @@
+<app-header></app-header>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+     <script src="
+     https://kit.fontawesome.com/a076d05399.js">
+    </script>
+    <style>
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 25%;
+        height: 120%;
+        position: fixed;
+        overflow: auto;
+        background-color: #00800085;
+      }
+      li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+      }
+ 
+      /* Change the link color on hover */
+      li a:hover {
+        background-color:#00800085;
+        color: #fff;
+      }
+      .icon {
+        margin-right: -100px;
+      }
+  </style>
+</head>
+<body>
+  <ul class="navbar-nav me-auto navbar-fixed-top">
+        <li>
+          <a routerLink="/fruits" class="active">Products</a>
+        </li>
+        <li class = "nav-item">
+          <a routerLink="/about" class="active">About</a>
+        </li> 
+        <li class = "nav-item">
+          <a routerLink="/userhelp" class="active">User Help</a>
+        </li>
+    </ul>
+    <div class="row offset-md-3" style="margin-top: 4px;">
+      <div class="col-md-3" *ngFor="let item of items" style="margin-top: 4px;">
+  
+          <div class="card" style="width:15rem;" >
+              <div align="center">
+              <img class="card-image" [src]="item.imagePath" alt="Card Image Cap" style="width:150px; height:150px;" />
+          </div>
+              <div class="card-body">
+                  <h3 class="card-title" style="font-size: 20px;"><b> {{item.Name}}</b></h3>
+                  <p class="card-text"> Return within {{item.ret}} hrs</p>
+              </div>
+  
+              <div class="row">
+                  <div class="col">
+                      <div>  {{item.price | currency:'INR'}}{{item.q}} </div>
+                  </div>
+                  <!-- <div class="col">
+                      <div> <button class="btn btn-primary" (click)="addToCart(item)"> Add To Cart </button> </div>
+                  </div> -->
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  
+</body>
+</html>
+
+
+
